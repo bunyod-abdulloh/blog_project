@@ -1,0 +1,86 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }} - My Blog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h1 class="card-title">{{ post.title }}</h1>
+                <p class="text-muted">
+                    By <strong>{{ post.author.username }}</strong> |
+                    {{ post.created_at|date:"M d, Y H:i" }} |
+                    👁 {{ post.views }}
+                </p>
+
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded mb-3">
+                {% endif %}
+
+                <div class="mb-3">
+                    {{ post.content|linebreaks }}
+                </div>
+
+                <p><b>Category:</b>
+                    <span class="badge bg-primary">{{ post.category.name }}</span>
+                </p>
+
+                <p><b>Tags:</b>
+                    {% for tag in post.tags.all %}
+                        <span class="badge bg-secondary">#{{ tag.name }}</span>
+                    {% empty %}
+                        <span class="text-muted">No tags</span>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+        <!-- Izohlar -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="h4 mb-3">💬 Comments ({{ post.comments.count }})</h2>
+
+                {% for comment in post.comments.all %}
+                    <div class="border rounded p-2 mb-2">
+                        <b>{{ comment.author.username }}</b>
+                        <small class="text-muted">{{ comment.created_at|date:"M d, Y H:i" }}</small>
+                        <p class="mb-0">{{ comment.content|linebreaks }}</p>
+                    </div>
+                {% empty %}
+                    <p class="text-muted">No comments yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Izoh qo‘shish formasi -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <h3 class="h5 mb-3">➕ Add a Comment</h3>
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {% for field in comment_form %}
+                            <div class="mb-3">
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small">{{ field.errors|striptags }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <p>
+                        <a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a>
+                        to add a comment.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
