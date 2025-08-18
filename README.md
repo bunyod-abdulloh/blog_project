@@ -24,9 +24,10 @@ Bu loyiha — Django framework yordamida yozilgan shaxsiy blog platformasi. Unda
 
 ## 🛠 Texnologiyalar
 
-- **Backend: Python 3.x, Django
-- **Frontend: HTML5, CSS3, Bootstrap 5
-- **Database: SQLite (default) yoki boshqa DB (PostgreSQL, MySQL)
+- **Backend:** Python 3.x, Django
+- **Frontend:** HTML5, CSS3, Bootstrap 5
+- **Database:** SQLite (default) yoki boshqa DB (PostgreSQL, MySQL)
+
 
 ## ⚙️ O‘rnatish
 
@@ -92,6 +93,7 @@ Postlarni o‘qish, ko‘rish va ularga izoh yozish mumkin.
 
 Har bir postda ko‘rish soni avtomatik oshadi.
 
+
 ## 📸 Ekranlar
 
 🏠 Home Page – eng yangi, ommabop va tavsiya qilingan postlar
@@ -99,6 +101,7 @@ Har bir postda ko‘rish soni avtomatik oshadi.
 🔑 Login/Register Page – foydalanuvchi autentifikatsiyasi
 
 📰 Post Detail Page – post mazmuni va izohlar
+
 
 ## 🤝 Hissa qo‘shish
 
@@ -109,6 +112,7 @@ Repozitoriyani fork qiling
 O‘z branch-ingizda ishlang (git checkout -b feature-name)
 
 O‘zgarishlarni push qiling va pull request yuboring
+
 
 ## 📄 Litsenziya
 
