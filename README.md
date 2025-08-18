@@ -71,7 +71,9 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-📂 Loyihaning asosiy struktura
+##📂 Loyihaning asosiy struktura
+
+```bash
 blog_project/
 │── blog/              # Asosiy app (posts, comments, views)
 │── templates/blog/    # HTML fayllar (Bootstrap bilan)
@@ -80,6 +82,7 @@ blog_project/
 │── manage.py
 │── requirements.txt
 │── README.md
+```
 
 ## 👤 Foydalanuvchilar uchun
 
