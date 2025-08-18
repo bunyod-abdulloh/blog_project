@@ -73,6 +73,8 @@ blog_project/
 │   │── static/blog/        # CSS, JS, Images
 │
 │── blog_project/           # Django settings va konfiguratsiya
+|── config/                 # Config fayl
+|── media/                  # Media fayllar
 │── manage.py
 │── requirements.txt
 │── README.md
