@@ -1,8 +1,8 @@
-📝 Django Blog Platform
+# 📝 Django Blog Platform
 
 Bu loyiha — Django framework yordamida yozilgan shaxsiy blog platformasi. Unda foydalanuvchilar post qo‘shishi, izoh qoldirishi, eng ko‘p ko‘rilgan va eng yangi postlarni ko‘rishi mumkin. Shuningdek, haftalik va oylik eng mashhur postlar ham ajratib ko‘rsatiladi.
 
-🚀 Xususiyatlar
+## 🚀 Xususiyatlar
 
 🔐 Foydalanuvchi ro‘yxatdan o‘tishi va login qilishi
 
@@ -22,40 +22,54 @@ Bu loyiha — Django framework yordamida yozilgan shaxsiy blog platformasi. Unda
 
 🎨 Bootstrap orqali chiroyli interfeys
 
-🛠 Texnologiyalar
+## 🛠 Texnologiyalar
 
-Python 3.x
+- **Backend: Python 3.x, Django
+- **Frontend: HTML5, CSS3, Bootstrap 5
+- **Database: SQLite (default) yoki boshqa DB (PostgreSQL, MySQL)
 
-Django
-
-Bootstrap 5
-
-SQLite (default) yoki boshqa DB (PostgreSQL, MySQL)
-
-⚙️ O‘rnatish
+## ⚙️ O‘rnatish
 
 Loyihani lokal kompyuteringizda ishga tushirish uchun quyidagi amallarni bajaring:
 
-# Repozitoriyani klon qiling
+### Repozitoriyani klon qiling
+
+```bash
 git clone https://github.com/username/django-blog.git
 cd django-blog
+```
 
-# Virtual environment yarating
+### Virtual environment yarating
+
+```bash
 python -m venv venv
 source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate     # Windows
+```
 
-# Zarur kutubxonalarni o‘rnating
+### Zarur kutubxonalarni o‘rnating
+
+```bash
 pip install -r requirements.txt
+```
 
-# Migratsiyalarni bajaring
+### Migratsiyalarni bajaring
+
+```bash
 python manage.py migrate
+```
 
-# Superuser yarating
+### Superuser yarating
+
+```bash
 python manage.py createsuperuser
+```
 
-# Serverni ishga tushiring
+### Serverni ishga tushiring
+
+```bash
 python manage.py runserver
+```
 
 📂 Loyihaning asosiy struktura
 blog_project/
@@ -67,7 +81,7 @@ blog_project/
 │── requirements.txt
 │── README.md
 
-👤 Foydalanuvchilar uchun
+## 👤 Foydalanuvchilar uchun
 
 Ro‘yxatdan o‘tish va login qilish mumkin.
 
@@ -83,7 +97,7 @@ Har bir postda ko‘rish soni avtomatik oshadi.
 
 📰 Post Detail Page – post mazmuni va izohlar
 
-🤝 Hissa qo‘shish
+## 🤝 Hissa qo‘shish
 
 Agar loyihaga hissa qo‘shmoqchi bo‘lsangiz:
 
@@ -93,6 +107,6 @@ O‘z branch-ingizda ishlang (git checkout -b feature-name)
 
 O‘zgarishlarni push qiling va pull request yuboring
 
-📄 Litsenziya
+## 📄 Litsenziya
 
 Loyiha ochiq manbali va MIT license asosida tarqatiladi.
