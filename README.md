@@ -64,14 +64,15 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## 📂 Loyihaning asosiy strukturasi
+## 📂 Loyihaning asosiy struktura
 
 ```bash
 blog_project/
-│── blog/              # Asosiy app (posts, comments, views)
-│── templates/blog/    # HTML fayllar (Bootstrap bilan)
-│── static/blog/       # CSS, JS, Images
-│── blog_project/      # Django settings va konfiguratsiya
+│── blog/                   # Asosiy app (posts, comments, views)
+│   │── templates/blog/     # HTML fayllar (Bootstrap bilan)
+│   │── static/blog/        # CSS, JS, Images
+│
+│── blog_project/           # Django settings va konfiguratsiya
 │── manage.py
 │── requirements.txt
 │── README.md
