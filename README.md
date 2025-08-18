@@ -71,7 +71,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-##📂 Loyihaning asosiy struktura
+## 📂 Loyihaning asosiy strukturasi
 
 ```bash
 blog_project/
@@ -92,7 +92,7 @@ Postlarni o‘qish, ko‘rish va ularga izoh yozish mumkin.
 
 Har bir postda ko‘rish soni avtomatik oshadi.
 
-📸 Ekranlar
+## 📸 Ekranlar
 
 🏠 Home Page – eng yangi, ommabop va tavsiya qilingan postlar
 
