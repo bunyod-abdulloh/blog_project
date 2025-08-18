@@ -4,15 +4,15 @@ Bu loyiha — Django framework yordamida yozilgan shaxsiy blog platformasi. Unda
 
 ## 🚀 Xususiyatlar
 
-- ** 🔐 Foydalanuvchi ro‘yxatdan o‘tishi va login qilishi **
-- ** ➕ Post qo‘shish va tahrirlash **
-- ** 📰 Eng yangi postlar ro‘yxati **
-- ** 🔥 Eng ko‘p ko‘rilgan postlar **
-- ** 📅 Haftaning va oyni eng ommabop postlari **
-- ** 💡 Tavsiya qilingan postlar (ko‘p izohga ega bo‘lganlar) **
-- ** 💬 Postlarga izoh qoldirish **
-- ** 📷 Postga rasm qo‘shish **
-- ** 🎨 Bootstrap orqali chiroyli interfeys **
+- **🔐 Foydalanuvchi ro‘yxatdan o‘tishi va login qilishi**
+- **➕ Post qo‘shish va tahrirlash**
+- **📰 Eng yangi postlar ro‘yxati**
+- **🔥 Eng ko‘p ko‘rilgan postlar**
+- **📅 Haftaning va oyni eng ommabop postlari**
+- **💡 Tavsiya qilingan postlar (ko‘p izohga ega bo‘lganlar)**
+- **💬 Postlarga izoh qoldirish**
+- **📷 Postga rasm qo‘shish**
+- **🎨 Bootstrap orqali chiroyli interfeys**
 
 ## 🛠 Texnologiyalar
 
