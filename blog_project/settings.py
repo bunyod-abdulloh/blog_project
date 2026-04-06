@@ -1,16 +1,14 @@
+from environs import Env
 from pathlib import Path
 
-from config.env_config import ENV_SECRET_KEY, ENV_DEBUG, ENV_ALLOWED_HOSTS
+env = Env()
+env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = ENV_SECRET_KEY
-
-DEBUG = ENV_DEBUG
-
-ALLOWED_HOSTS = ENV_ALLOWED_HOSTS
-
-# Application definition
+SECRET_KEY = env.str("SECRET_KEY")
+DEBUG = env.bool("DEBUG")
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -19,8 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # local apps
     'blog',
 ]
 

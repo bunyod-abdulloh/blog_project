@@ -18,9 +18,9 @@ def home(request):
     month_ago = now - timedelta(days=30)
 
     latest_posts = Post.objects.filter(is_approved=True).order_by("-created_at")[:5]
-    popular_posts = Post.objects.filter(is_approved=True).order_by("-views")[:5]
-    weekly_posts = Post.objects.filter(is_approved=True, created_at__gte=week_ago).order_by("-views")[:5]
-    monthly_posts = Post.objects.filter(is_approved=True, created_at__gte=month_ago).order_by("-views")[:5]
+    popular_posts = Post.objects.filter(is_approved=True).order_by("-views_count")[:5]
+    weekly_posts = Post.objects.filter(is_approved=True, created_at__gte=week_ago).order_by("-views_count")[:5]
+    monthly_posts = Post.objects.filter(is_approved=True, created_at__gte=month_ago).order_by("-views_count")[:5]
     recommended_posts = Post.objects.filter(is_approved=True).annotate(
         num_comments=Count("comments")
     ).order_by("-num_comments")[:5]
@@ -41,7 +41,7 @@ def post_detail(request, pk):
 
     # faqat GET so‘rovda views ko‘paytirish
     if request.method == "GET":
-        post.views += 1
+        post.views_count += 1
         post.save()
 
     comments = post.comments.all()
@@ -76,7 +76,6 @@ def add_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.is_approved = False  # admin tasdiqlashi kerak
             post.save()
             form.save_m2m()
             messages.success(request, "Your post has been submitted and awaits admin approval.")

@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- 📰 Latest Posts -->
-<h1 class="mb-4">📰 Latest Posts</h1>
+<h1 class="mb-4">📰 Eng yangi postlar</h1>
 <div class="row g-4">
     {% for post in latest_posts %}
         <div class="col-md-6 col-lg-4">
@@ -23,7 +23,7 @@
                         <small class="text-muted">
                             By <b>{{ post.author.username }}</b> |
                             {{ post.created_at|date:"M d, Y" }} |
-                            👁 {{ post.views }}
+                            👁 {{ post.views_count }}
                         </small>
                     </div>
                 </div>
@@ -37,12 +37,12 @@
 <hr class="my-5">
 
 <!-- 🔥 Most Viewed -->
-<h2 class="mt-5">🔥 Most Viewed Posts</h2>
+<h2 class="mt-5">🔥 Eng ko‘p ko‘rilgan postlar</h2>
 <ul class="list-group list-group-flush mb-4">
     {% for post in popular_posts %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="{% url 'post_detail' post.pk %}" class="fw-bold text-decoration-none">{{ post.title }}</a>
-            <span class="badge bg-primary rounded-pill">{{ post.views }} views</span>
+            <span class="badge bg-primary rounded-pill">{{ post.views_count }} views</span>
         </li>
     {% empty %}
         <li class="list-group-item">No popular posts yet.</li>
@@ -50,12 +50,12 @@
 </ul>
 
 <!-- 📅 This Week -->
-<h2>📅 Popular This Week</h2>
+<h2>📅 Haftaning eng ommabop postlari</h2>
 <ul class="list-group list-group-flush mb-4">
     {% for post in weekly_posts %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="{% url 'post_detail' post.pk %}" class="fw-bold text-decoration-none">{{ post.title }}</a>
-            <span class="badge bg-success rounded-pill">{{ post.views }} views</span>
+            <span class="badge bg-success rounded-pill">{{ post.views_count }} views</span>
         </li>
     {% empty %}
         <li class="list-group-item">No popular posts this week.</li>
@@ -63,12 +63,12 @@
 </ul>
 
 <!-- 🌟 This Month -->
-<h2>🌟 Popular This Month</h2>
+<h2>🌟 Oyning eng ommabop postlari</h2>
 <ul class="list-group list-group-flush mb-4">
     {% for post in monthly_posts %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="{% url 'post_detail' post.pk %}" class="fw-bold text-decoration-none">{{ post.title }}</a>
-            <span class="badge bg-warning text-dark rounded-pill">{{ post.views }} views</span>
+            <span class="badge bg-warning text-dark rounded-pill">{{ post.views_count }} views</span>
         </li>
     {% empty %}
         <li class="list-group-item">No popular posts this month.</li>
@@ -76,7 +76,7 @@
 </ul>
 
 <!-- 💡 Recommended -->
-<h2>💡 Recommended Posts</h2>
+<h2>💡 Tavsiya qilingan postlar</h2>
 <ul class="list-group list-group-flush">
     {% for post in recommended_posts %}
         <li class="list-group-item d-flex justify-content-between align-items-center">

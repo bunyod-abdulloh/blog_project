@@ -104,7 +104,7 @@ Agar loyihaga hissa qo‘shmoqchi bo‘lsangiz:
 
 Repozitoriyani fork qiling
 
-O‘z branch-ingizda ishlang (git checkout -b feature-name)
+O‘z branchingizda ishlang (git checkout -b feature-name)
 
 O‘zgarishlarni push qiling va pull request yuboring
 

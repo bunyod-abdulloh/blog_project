@@ -18,7 +18,6 @@ class Category(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField(unique=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -36,10 +35,10 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="posts")
     tags = models.ManyToManyField(Tag, blank=True, related_name="posts")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
-    views = models.PositiveIntegerField(default=0)
-    is_approved = models.BooleanField(default=False)  # admin tasdiqlashi kerak
+    views_count = models.PositiveIntegerField(default=0)
+    is_approved = models.BooleanField(default=False, db_index=True)  # admin tasdiqlashi kerak
 
     def __str__(self):
         return self.title

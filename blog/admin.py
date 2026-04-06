@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Post, Category, Tag, Comment
 
 
@@ -16,7 +17,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("name",)}
+    list_display = ("name",)
 
 
 @admin.register(Comment)
